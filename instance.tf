@@ -139,10 +139,10 @@ resource "aws_instance" "bastien" {
   instance_type   = var.instance_type
   subnet_id       = module.VPC.public_subnet1
   key_name        = "project-key"
-  user_data       = "root_enable.sh" 
+  user_data       = file("root_enable.sh")
   vpc_security_group_ids = [ aws_security_group.bastien.id ]
   root_block_device {
-    volume_size = var.volume-size 
+    volume_size = var.volume 
   }
   tags = {
     Name = "${var.project_name}-Basiten-Server-${var.project_env}"
@@ -157,10 +157,10 @@ resource "aws_instance" "wordpress" {
   instance_type   = var.instance_type
   subnet_id       = module.VPC.public_subnet2
   key_name        = "project-key"
-  user_data       = "root_enable.sh" 
+  user_data       = file("root_enable.sh") 
   vpc_security_group_ids = [ aws_security_group.webserver.id ]
   root_block_device {
-    volume_size = var.volume-size 
+    volume_size = var.volume 
   }
   tags = {
     Name = "${var.project_name}-Wordpress-Server-${var.project_env}"
@@ -175,10 +175,10 @@ resource "aws_instance" "mysql" {
   instance_type   = var.instance_type
   subnet_id       = module.VPC.private_subnet1
   key_name        = "project-key"
-  user_data       = "root_enable.sh" 
+  user_data       = file("root_enable.sh") 
   vpc_security_group_ids = [ aws_security_group.mysql.id ]
   root_block_device {
-    volume_size = var.volume-size 
+    volume_size = var.volume 
   }
 
   tags = {
