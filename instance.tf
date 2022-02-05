@@ -142,7 +142,7 @@ resource "aws_instance" "bastien" {
   user_data       = file("root_enable.sh")
   vpc_security_group_ids = [ aws_security_group.bastien.id ]
   root_block_device {
-    volume_size = var.volume 
+    volume_size = var.volume-size  
   }
   tags = {
     Name = "${var.project_name}-Basiten-Server-${var.project_env}"
@@ -160,7 +160,7 @@ resource "aws_instance" "wordpress" {
   user_data       = file("root_enable.sh") 
   vpc_security_group_ids = [ aws_security_group.webserver.id ]
   root_block_device {
-    volume_size = var.volume 
+    volume_size = var.volume-size 
   }
   tags = {
     Name = "${var.project_name}-Wordpress-Server-${var.project_env}"
@@ -178,7 +178,7 @@ resource "aws_instance" "mysql" {
   user_data       = file("root_enable.sh") 
   vpc_security_group_ids = [ aws_security_group.mysql.id ]
   root_block_device {
-    volume_size = var.volume 
+    volume_size = var.volume-size  
   }
 
   tags = {
