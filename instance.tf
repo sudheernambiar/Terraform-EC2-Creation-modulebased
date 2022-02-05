@@ -1,4 +1,5 @@
 module "VPC" {
+    # make sure you have installed git in your instance.
     source = "git::https://github.com/sudheernambiar/Terrafom-vpc-ec2-modulebased.git"
     cidr_block = var.project_cidr
     project    = var.project_name
