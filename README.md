@@ -25,3 +25,9 @@ creates the AWS provider in this location with git enabled.(make sure your syste
 Provides with AMI ID of the image you want to pull(here amazon EC2 - need to provide the ID based on region), instance type you can select the one you want to use. This based on in stance you can ditch this variable and directly can provide it inside the instance creation part. Project CIDR value is the value in which we can going to create a VPC with subnets, this will pass to the VPC module. CIDR bits are those bits took from the original CIDR to create those subnets (Say 172.30.0.0/16 and you took 3 bits 172.30.0.0/19 will be the first subnet value)
 
 #### instance.tf
+
+## Execution steps.
+
+## Observations.
+
+## Summary
