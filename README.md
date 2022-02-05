@@ -29,14 +29,15 @@ You can specify a locally created key file with “ssh-keygen” command and giv
 ```
 $ terraform init 
 ```
-- terraform plan
+- To identify the procedure pre flight results
 ```
 $ terraform plan 
 ```
-- terraform apply (with a yes you can permit after an overview, or explicitly work it with "terraform apply -auto-approve".
+- Execute the plan (with a yes you can permit after an overview, or explicitly work it with "terraform apply -auto-approve".
 ```
 $ terraform apply 
 ```
+- Incase to deploy without a pre flight check.
 ```
 $ terraform apply -auto-approve 
 ```
