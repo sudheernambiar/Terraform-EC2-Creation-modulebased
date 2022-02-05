@@ -1,5 +1,4 @@
 module "VPC" {
-    # make sure you have installed git in your instance.
     source = "git::https://github.com/sudheernambiar/Terrafom-vpc-ec2-modulebased.git"
     cidr_block = var.project_cidr
     project    = var.project_name
@@ -8,6 +7,14 @@ module "VPC" {
     bits       = var.cidr_bits
 } 
 
+#module "VPC" {
+#    source = "../vpc"
+#    cidr_block = var.project_cidr
+#    project    = var.project_name
+#    level      = var.project_env
+#    owner      = var.project_owner
+#    bits       = var.cidr_bits
+#} 
 #create a key pair locally with the name user ssh-keygen and give the keyname as project-key
 resource "aws_key_pair" "project-key" {
   key_name   = "project-key"
@@ -135,7 +142,7 @@ resource "aws_instance" "bastien" {
   user_data       = "root_enable.sh" 
   vpc_security_group_ids = [ aws_security_group.bastien.id ]
   root_block_device {
-    volume_size = 10 
+    volume_size = var.volume 
   }
   tags = {
     Name = "${var.project_name}-Basiten-Server-${var.project_env}"
@@ -153,7 +160,7 @@ resource "aws_instance" "wordpress" {
   user_data       = "root_enable.sh" 
   vpc_security_group_ids = [ aws_security_group.webserver.id ]
   root_block_device {
-    volume_size = 10 
+    volume_size = var.volume 
   }
   tags = {
     Name = "${var.project_name}-Wordpress-Server-${var.project_env}"
@@ -171,7 +178,7 @@ resource "aws_instance" "mysql" {
   user_data       = "root_enable.sh" 
   vpc_security_group_ids = [ aws_security_group.mysql.id ]
   root_block_device {
-    volume_size = 10 
+    volume_size = var.volume 
   }
 
   tags = {

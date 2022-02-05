@@ -25,3 +25,7 @@ variable "project_env" {
 variable "project_owner" {
   default = "fuji"
 }
+
+variable "volume-size" {
+  default = 10
+}
