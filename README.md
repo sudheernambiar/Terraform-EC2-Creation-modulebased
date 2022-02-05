@@ -26,9 +26,19 @@ Instance file contains a module that links to the git hub repository of the http
 You can specify a locally created key file with “ssh-keygen” command and give the name as mentioned in the file or edit the way you want. If you want to keep the one which you have inside the AWS, then this part you can remove and place the key name in key_name in the instance part. Now we have to create three security groups which will help you to limit the traffic to your desired manner. Instances with root volume, where we have specified with instance details, linked with other values. Some values are taking from data sources, which will be coming after the VPC creation. Following are those outputs which we want to use for further procedures, like public IPs and private IPs.
 ## Execution steps.
 - terraform init (to initialise with the provider)
+```
+$ terraform init 
+```
 - terraform plan
+```
+$ terraform plan 
+```
 - terraform apply (with a yes you can permit after an overview, or explicitly work it with "terraform apply -auto-approve".
-
+```
+$ terraform apply 
+```
+$ terraform apply -auto-approve 
+```
 Note: In case you want to make a clean-up use "terraform destroy"
 ## Observations.
 - First VPC, Private subnets, Route Tables, NAT GW and IGW will pop up, later instances will be created
