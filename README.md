@@ -37,9 +37,13 @@ $ terraform plan
 ```
 $ terraform apply 
 ```
+```
 $ terraform apply -auto-approve 
 ```
 Note: In case you want to make a clean-up use "terraform destroy"
+```
+$ terraform destroy
+```
 ## Observations.
 - First VPC, Private subnets, Route Tables, NAT GW and IGW will pop up, later instances will be created
 - As mentioned, only Jump server may be in accessible way with ssh and rest of them are not accessible from subnet.
