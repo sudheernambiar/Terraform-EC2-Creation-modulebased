@@ -2,11 +2,11 @@
 3 ec2 instance creation with VPC generation backend by passing necessary in variable file.
 
 ## Prerequisites
-Script is for AWS environment.
-An EC2 instance with role of admin. 
-Terraform installed.
-Installed with packages tree, git for verification and collection of data.
-cloned all contents in this repo to a single location.
+- Script is for AWS environment.
+- An EC2 instance with role of admin. 
+- Terraform installed.
+- Installed with packages tree, git for verification and collection of data.
+- cloned all contents in this repo to a single location.
 
 ## Files Explained
 
